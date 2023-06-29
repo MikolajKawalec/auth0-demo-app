@@ -5,11 +5,12 @@ export default function Home() {
 	const { user, error, isLoading } = useUser();
 	if (isLoading) return <div>Loading...</div>;
 	if (error) return <div>Error: {error.message}</div>;
+
 	return (
 		<main>
 			{user ? (
 				<div>
-					<div>User: {user.email}</div>
+					<div>User: {user.name}</div>
 					<a href='/api/auth/logout'>Logout</a>
 				</div>
 			) : (
